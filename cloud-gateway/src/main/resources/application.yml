@@ -1,0 +1,33 @@
+
+spring:
+  application:
+   name: GETAWAY-SERVICE
+    
+  cloud:
+   gateway:
+     routes:
+      - id: r1
+        uri: lb://ORDER-SERVICE
+        predicates:
+          - Path=/order/**
+        filters:
+          - AutheticationFilter
+          
+      - id: r2
+        uri: lb://PAYMENT-SERVICE
+        predicates:
+          - Path=/payment/**
+        filters:
+          - AutheticationFilter
+          
+      - id: r3
+        uri: lb://IDENTITY-SERVICE
+        predicates:
+          - Path=/auth/**
+    
+
+    
+server:
+ port: 2525
+
+ 

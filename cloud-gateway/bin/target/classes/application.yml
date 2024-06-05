@@ -1,0 +1,44 @@
+<<<<<<< HEAD
+spring:
+  application:
+   name: GETAWAY-SERVICE
+    
+  cloud:
+   gateway:
+     routes:
+      - id: r1
+        uri: lb://ORDER-SERVICE
+        predicates:
+          - Path=/order/**
+      - id: r1
+        uri: lb://PAYMENT-SERVICE
+        predicates:
+          - Path=/payment/**
+    
+
+    
+server:
+ port: 2525
+=======
+spring:
+  application:
+   name: GETAWAY-SERVICE
+    
+  cloud:
+   gateway:
+     routes:
+      - id: r1
+        uri: lb://ORDER-SERVICE
+        predicates:
+          - Path=/order/**
+      - id: r1
+        uri: lb://PAYMENT-SERVICE
+        predicates:
+          - Path=/payment/**
+    
+
+    
+server:
+ port: 2525
+>>>>>>> 41d800b8c58ee17a9957d985d53e4b53ee67a7e3
+ 
